@@ -108,12 +108,12 @@ const members = [
 ];
 
 const lessons = [
- {title:"Tên bài 1", desc:"Mô tả bài 1.", author:"nghi", date:"2025-01-10", file:"docs/bai1.pdf"},
- {title:"Tên bài 2", desc:"Mô tả bài 2.", author:"ngoc", date:"2025-01-17", file:"docs/bai2.pdf"},
- {title:"Tên bài 3", desc:"Mô tả bài 3.", author:"thao", date:"2025-01-24", file:"docs/bai3.pptx"},
- {title:"Tên bài 4", desc:"Mô tả bài 4.", author:"phuc", date:"2025-02-01", file:"docs/bai4.docx"},
- {title:"Tên bài 5", desc:"Mô tả bài 5.", author:"phat", date:"2025-02-08", file:"docs/bai5.pdf"},
- {title:"Tên bài 6", desc:"Mô tả bài 6.", author:"minh", date:"2025-02-15", file:"docs/bai6.pdf"}
+ {title:"Tên bài 1", desc:"Mô tả bài 1.", date:"2025-01-10", file:"docs/bai1.pdf"},
+ {title:"Tên bài 2", desc:"Mô tả bài 2.", date:"2025-01-17", file:"docs/bai2.pdf"},
+ {title:"Tên bài 3", desc:"Mô tả bài 3.", date:"2025-01-24", file:"docs/bai3.pptx"},
+ {title:"Tên bài 4", desc:"Mô tả bài 4.", date:"2025-02-01", file:"docs/bai4.docx"},
+ {title:"Tên bài 5", desc:"Mô tả bài 5.", date:"2025-02-08", file:"docs/bai5.pdf"},
+ {title:"Tên bài 6", desc:"Mô tả bài 6.", date:"2025-02-15", file:"docs/bai6.pdf"}
 ];
 
 /* ===== CODE XỬ LÝ (không cần sửa) ===== */
@@ -173,7 +173,6 @@ function renderLessons(){
  <button class="lc" data-i="${i}">
  <div class="no">Bài ${i+1}</div>
  <div>${l.title}</div>
- <small>👤 ${getM(l.author) ? getM(l.author).name : ""}</small>
  </button>`).join("");
  document.querySelectorAll(".lc").forEach(b => b.onclick = () => openLesson(+b.dataset.i));
 }
@@ -184,7 +183,7 @@ function openLesson(i){
  $("#vb").textContent = "Bài " + (i+1);
  $("#vt").textContent = l.title;
  $("#vd").textContent = l.desc;
- $("#vm").textContent = "👤 " + (m ? m.name : "—") + " · 📅 " + l.date;
+ $("#vm").textContent = "📅 " + l.date;
  $("#vo").href = l.file || "#";
  $("#vl").href = l.file || "#";
 
