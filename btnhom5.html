@@ -304,6 +304,195 @@ const lessons = [
  `
  }
 ];
+ ,
+{
+ number:8,
+ title:"Định dạng văn bản HTML",
+ content:`
+ <h3>LUYỆN TẬP</h3>
+
+ <h4>Luyện tập 1: Sửa phần tử để làm nổi bật ý chính.</h4>
+ <p>Thẻ <code>strong</code> và thẻ <code>em</code> được dùng để nhấn mạnh nội dung; thẻ <code>b</code> chỉ có tác dụng in đậm văn bản.</p>
+ <p>Mã HTML:</p>
+ <pre><code>&lt;p&gt;&lt;strong&gt;Thẻ strong&lt;/strong&gt; và &lt;em&gt;thẻ em&lt;/em&gt; được sử dụng để nhấn mạnh vào nội dung trong phần tử. Thẻ &lt;strong&gt;B&lt;/strong&gt; chỉ có tác dụng in đậm văn bản.&lt;/p&gt;</code></pre>
+
+ <h4>Luyện tập 2: Trình bày nội dung “Internet tốc độ cao” bằng HTML.</h4>
+ <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+ &lt;meta charset="UTF-8"&gt;
+ &lt;title&gt;INTERNET TỐC ĐỘ CAO&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;h1&gt;INTERNET TỐC ĐỘ CAO&lt;/h1&gt;
+ &lt;p&gt;&lt;em&gt;Dịch vụ Internet tốc độ cao là dịch vụ Internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.&lt;/em&gt;&lt;/p&gt;
+ &lt;h2&gt;Các tính năng nổi bật:&lt;/h2&gt;
+ &lt;ul&gt;
+ &lt;li&gt;Tốc độ siêu cao từ 150 MBps trở lên&lt;/li&gt;
+ &lt;li&gt;Lắp đặt nhanh chóng trong 24h&lt;/li&gt;
+ &lt;li&gt;Phù hợp với cá nhân/hộ gia đình&lt;/li&gt;
+ &lt;li&gt;Tặng modem 2 băng tần&lt;/li&gt;
+ &lt;li&gt;Miễn phí lắp đặt, hỗ trợ 24/7&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+ <h3>VẬN DỤNG</h3>
+
+ <h4>Vận dụng 1: Dùng một màu trong ảnh làm màu tiêu đề bài thơ.</h4>
+ <ol>
+ <li>Chọn màu trong bức ảnh muốn dùng cho tiêu đề.</li>
+ <li>Tạo tiêu đề bằng thẻ <code>h1</code>, <code>h2</code> hoặc <code>h3</code>.</li>
+ <li>Dùng công cụ lấy mã màu từ ảnh, rồi đặt màu đó cho thuộc tính CSS <code>color</code> của tiêu đề.</li>
+ </ol>
+ <pre><code>&lt;h1 style="color: #228B22;"&gt;Tên bài thơ&lt;/h1&gt;</code></pre>
+
+ <h4>Vận dụng 2: Các định dạng văn bản</h4>
+ <ul>
+ <li>Định dạng chữ đậm bằng thẻ <code>strong</code> hoặc <code>b</code>.</li>
+ <li>Định dạng chữ thường bằng thẻ <code>p</code>.</li>
+ <li>Thay đổi cỡ chữ bằng thuộc tính CSS <code>font-size</code>.</li>
+ </ul>
+ <p><i><div style="display:flex;align-items:center;justify-content:space-between;overflow:hidden;height:90px;padding:0 4px;font-family:serif;font-size:30px;font-weight:bold;white-space:nowrap">
+ <span style="transform:translateY(25px)">0</span>
+ <span style="transform:translateY(10px)">0</span>
+ <span style="transform:translateY(-8px)">0</span>
+ <span style="transform:translateY(-22px)">0</span>
+ <span style="transform:translateY(-28px)">0</span>
+ <span style="transform:translateY(-20px)">0</span>
+ <span style="transform:translateY(-5px)">0</span>
+ <span style="transform:translateY(14px)">0</span>
+ <span style="transform:translateY(27px)">0</span>
+ <span style="transform:translateY(14px)">0</span>
+ <span style="transform:translateY(-5px)">0</span>
+ <span style="transform:translateY(-22px)">0</span>
+ <span style="transform:translateY(-28px)">0</span>
+ <span style="transform:translateY(-20px)">0</span>
+ <span style="transform:translateY(-5px)">0</span>
+ <span style="transform:translateY(14px)">0</span>
+ <span style="transform:translateY(27px)">0</span>
+ <span style="transform:translateY(14px)">0</span>
+ <span style="transform:translateY(-5px)">0</span>
+ <span style="transform:translateY(-22px)">0</span>
+ <span style="transform:translateY(-28px)">0</span>
+ <span style="transform:translateY(-20px)">0</span>
+ <span style="transform:translateY(-5px)">0</span>
+ <span style="transform:translateY(14px)">0</span>
+ <span style="transform:translateY(27px)">0</span>
+ <span style="transform:translateY(14px)">0</span>
+ <span style="transform:translateY(-5px)">0</span>
+ <span style="transform:translateY(-22px)">0</span>
+ <span style="transform:translateY(-28px)">0</span>
+ <span style="transform:translateY(-20px)">0</span>
+</div></i></p>
+ `
+},
+{
+ number:9,
+ title:"Danh sách, bảng và liên kết HTML",
+ content:`
+ <h3>CÂU HỎI TRANG 53</h3>
+
+ <h4>Tạo danh sách lồng nhau: mức 1 đánh số 1, 2, 3; mức 2 đánh số a, b, c.</h4>
+ <p>Dùng thẻ <code>ol</code> cho danh sách ngoài và một thẻ <code>ol type="a"</code> lồng bên trong:</p>
+ <pre><code>&lt;ol&gt;
+ &lt;li&gt;Mục 1&lt;/li&gt;
+ &lt;li&gt;Mục 2
+ &lt;ol type="a"&gt;
+ &lt;li&gt;Mục con a&lt;/li&gt;
+ &lt;li&gt;Mục con b&lt;/li&gt;
+ &lt;li&gt;Mục con c&lt;/li&gt;
+ &lt;/ol&gt;
+ &lt;/li&gt;
+ &lt;li&gt;Mục 3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+ <h4>Hoạt động 2: Nên dùng dạng biểu diễn nào cho thông tin món ăn?</h4>
+ <p>Nên dùng <b>bảng</b>, vì mỗi món ăn có nhiều thông tin tương ứng như đơn giá, số lượng và tổng số tiền. Bảng giúp trình bày các thông tin theo hàng và cột, dễ đọc và so sánh.</p>
+ <ul>
+ <li><b>Danh sách:</b> dễ trình bày danh sách ngắn nhưng khó thể hiện nhiều thông tin của từng món.</li>
+ <li><b>Danh sách mô tả:</b> phù hợp để mô tả từng mục, nhưng có thể dài và khó so sánh khi có nhiều món.</li>
+ <li><b>Bảng:</b> sắp xếp thông tin rõ ràng theo cột, phù hợp với món ăn, đơn giá, số lượng và tổng tiền.</li>
+ </ul>
+
+ <h3>LUYỆN TẬP TRANG 56</h3>
+
+ <h4>Tạo viền bảng bằng thuộc tính style và tô màu tên môn học.</h4>
+ <pre><code>&lt;table style="border-collapse:collapse;"&gt;
+ &lt;tr&gt;
+ &lt;th style="border:2px solid blue;"&gt;Họ tên&lt;/th&gt;
+ &lt;th style="border:2px solid blue;"&gt;Toán&lt;/th&gt;
+ &lt;th style="border:2px solid blue;"&gt;Vật lí&lt;/th&gt;
+ &lt;th style="border:2px solid blue;"&gt;Hóa học&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="border:2px solid blue;"&gt;Nguyễn Văn A&lt;/td&gt;
+ &lt;td style="border:2px solid red;"&gt;8.5&lt;/td&gt;
+ &lt;td style="border:2px solid yellow;"&gt;7.0&lt;/td&gt;
+ &lt;td style="border:2px solid green;"&gt;9.0&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+ <h4>Vận dụng: Python tạo tệp HTML chứa bảng điểm.</h4>
+ <pre><code>def generate_html_table(data):
+ html = '&lt;table style="border-collapse:collapse;"&gt;'
+ html += "&lt;tr&gt;"
+ html += '&lt;th style="border:2px solid blue;"&gt;Họ tên&lt;/th&gt;'
+ html += '&lt;th style="border:2px solid blue;"&gt;Điểm Toán&lt;/th&gt;'
+ html += '&lt;th style="border:2px solid blue;"&gt;Điểm Vật lí&lt;/th&gt;'
+ html += '&lt;th style="border:2px solid blue;"&gt;Điểm Hóa học&lt;/th&gt;'
+ html += "&lt;/tr&gt;"
+
+ for row in data:
+ html += "&lt;tr&gt;"
+ for value in row:
+ html += f'&lt;td style="border:2px solid black;"&gt;{value}&lt;/td&gt;'
+ html += "&lt;/tr&gt;"
+
+ html += "&lt;/table&gt;"
+ return html
+
+data = [
+ ["Nguyễn Văn A", "8.5", "7.0", "9.0"],
+ ["Trần Thị B", "7.0", "8.0", "8.5"],
+ ["Lê Quang C", "6.5", "7.5", "8.0"],
+ ["Phạm Thị D", "9.0", "8.5", "7.5"]
+]
+
+html_content = generate_html_table(data)
+
+with open("data_table.html", "w", encoding="utf-8") as file:
+ file.write(html_content)
+
+print("Tạo tệp HTML thành công!")</code></pre>
+
+ <h3>LUYỆN TẬP TRANG 61</h3>
+
+ <h4>Luyện tập 1: Tạo liên kết quay về trang chủ CLB.html.</h4>
+ <p>Đặt liên kết sau trong trang <code>thong_tin.html</code>:</p>
+ <pre><code>&lt;a href="CLB.html"&gt;Quay về trang chủ&lt;/a&gt;</code></pre>
+
+ <h4>Luyện tập 2: Tạo trang giới thiệu bản thân có liên kết tới trang web của ba bạn cùng lớp.</h4>
+ <p>Ví dụ dưới đây dùng địa chỉ mẫu. Hãy thay tên và đường dẫn bằng thông tin thật của các bạn:</p>
+ <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+ &lt;meta charset="UTF-8"&gt;
+ &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+ &lt;p&gt;Xin chào! Mình là ...&lt;/p&gt;
+ &lt;h2&gt;Các bạn cùng lớp&lt;/h2&gt;
+ &lt;ul&gt;
+ &lt;li&gt;&lt;a href="https://www.facebook.com/"&gt;Trang của bạn thứ nhất&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href="https://www.facebook.com/"&gt;Trang của bạn thứ hai&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href="https://www.facebook.com/"&gt;Trang của bạn thứ ba&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+ `
+}
 
 const $ = selector => document.querySelector(selector);
 const getMember = id => members.find(member => member.id === id);
