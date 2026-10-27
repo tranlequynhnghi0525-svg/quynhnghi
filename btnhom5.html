@@ -7,112 +7,56 @@
 
 <style>
 :root{
- --green-dark:#14532d;
- --green:#15803d;
- --green-bright:#22c55e;
- --green-light:#dcfce7;
- --page:#f0fdf4;
- --text:#1f2937;
- --shadow:0 5px 18px rgba(21,128,61,.13);
+ --dark:#14532d;--green:#15803d;--bright:#22c55e;
+ --light:#dcfce7;--page:#f0fdf4;--text:#1f2937;
+ --shadow:0 5px 18px rgba(21,128,61,.13)
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
- margin:0;
- font-family:"Segoe UI",Arial,sans-serif;
- color:var(--text);
- background:var(--page);
- line-height:1.65;
-}
-.hero{
- padding:55px 20px;
- text-align:center;
- color:white;
- background:linear-gradient(135deg,var(--green-dark),var(--green),var(--green-bright));
-}
+body{margin:0;font-family:"Segoe UI",Arial,sans-serif;color:var(--text);background:var(--page);line-height:1.65}
+.hero{padding:55px 20px;text-align:center;color:white;background:linear-gradient(135deg,var(--dark),var(--green),var(--bright))}
 .hero h1{margin:0 0 8px;font-size:clamp(1.8rem,5vw,2.7rem)}
-.hero p{margin:0;opacity:.92}
+.hero p{margin:0}
 main{width:min(1100px,100%);margin:auto;padding:24px 20px 60px}
-.section-title{
- color:var(--green-dark);
- font-size:1.5rem;
- margin:32px 0 18px;
- padding-left:12px;
- border-left:5px solid var(--green-bright);
-}
+.section-title{color:var(--dark);font-size:1.5rem;margin:32px 0 18px;padding-left:12px;border-left:5px solid var(--bright)}
 .members{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.member{
- background:#fff;
- border-top:5px solid var(--green-bright);
- border-radius:16px;
- padding:22px 14px;
- text-align:center;
- box-shadow:var(--shadow);
- cursor:pointer;
- transition:.2s;
-}
-.member:hover{transform:translateY(-4px);background:var(--green-light)}
-.avatar{
- width:84px;height:84px;margin:auto;border-radius:50%;
- display:flex;align-items:center;justify-content:center;
- position:relative;overflow:hidden;
- color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green));
- border:3px solid var(--green-light);font-size:2rem;font-weight:bold;
-}
+.member{background:white;border-top:5px solid var(--bright);border-radius:16px;padding:22px 14px;text-align:center;box-shadow:var(--shadow);cursor:pointer;transition:.2s}
+.member:hover{transform:translateY(-4px);background:var(--light)}
+.avatar{width:84px;height:84px;margin:auto;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;color:white;background:linear-gradient(135deg,var(--bright),var(--green));border:3px solid var(--light);font-size:2rem;font-weight:bold}
 .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .avatar.large{width:120px;height:120px;font-size:3rem}
-.member h3{color:var(--green-dark);font-size:1.05rem;margin:10px 0 4px}
-.pill{display:inline-block;padding:2px 11px;border-radius:99px;background:var(--green-light);color:var(--green);font-size:.83rem}
+.member h3{color:var(--dark);font-size:1.05rem;margin:10px 0 4px}
+.pill{display:inline-block;padding:2px 11px;border-radius:99px;background:var(--light);color:var(--green);font-size:.83rem}
 .more{display:block;margin-top:10px;color:var(--green);font-weight:600;font-size:.9rem}
 .lesson-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
-.lesson-button{
- border:2px solid #bbf7d0;border-radius:14px;padding:16px;
- background:white;text-align:left;color:var(--text);font:inherit;
- cursor:pointer;box-shadow:var(--shadow);transition:.2s;
-}
-.lesson-button:hover{transform:translateY(-3px);border-color:var(--green-bright)}
-.lesson-button.active{background:var(--green);border-color:var(--green);color:#fff}
+.lesson-button{border:2px solid #bbf7d0;border-radius:14px;padding:16px;background:white;text-align:left;color:var(--text);font:inherit;cursor:pointer;box-shadow:var(--shadow);transition:.2s}
+.lesson-button:hover{transform:translateY(-3px);border-color:var(--bright)}
+.lesson-button.active{background:var(--green);border-color:var(--green);color:white}
 .lesson-number{display:block;color:var(--green);font-size:1.3rem;font-weight:800}
-.lesson-button.active .lesson-number{color:#fff}
+.lesson-button.active .lesson-number{color:white}
 .lesson-title{display:block;font-weight:600}
-.viewer{
- margin-top:24px;background:#fff;border:1px solid #bbf7d0;
- border-radius:16px;box-shadow:var(--shadow);overflow:hidden;
-}
-.viewer-header{padding:20px 24px;background:var(--green-light)}
-.viewer-header h2{margin:8px 0 2px;color:var(--green-dark)}
+.viewer{margin-top:24px;background:white;border:1px solid #bbf7d0;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.viewer-header{padding:20px 24px;background:var(--light)}
+.viewer-header h2{margin:8px 0 2px;color:var(--dark)}
 .viewer-content{padding:22px 26px;overflow-wrap:anywhere}
-.viewer-content h3{margin:24px 0 8px;color:var(--green-dark)}
+.viewer-content h3{margin:24px 0 8px;color:var(--dark)}
 .viewer-content h4{margin:18px 0 6px;color:var(--green)}
 .viewer-content ul,.viewer-content ol{padding-left:24px}
 .viewer-content li{margin:6px 0}
-.viewer-content pre{
- white-space:pre-wrap;overflow:auto;padding:14px;
- background:var(--page);border:1px solid #bbf7d0;border-radius:10px;
- font:14px/1.5 Consolas,monospace;
-}
+.viewer-content pre{white-space:pre-wrap;overflow:auto;padding:14px;background:var(--page);border:1px solid #bbf7d0;border-radius:10px;font:14px/1.5 Consolas,monospace}
 .viewer-content table{border-collapse:collapse;margin:12px 0;width:100%}
 .viewer-content th,.viewer-content td{border:1px solid #bbf7d0;padding:8px;text-align:left}
-.viewer-content th{background:var(--green-light)}
-.modal{
- position:fixed;inset:0;z-index:10;padding:16px;
- display:flex;align-items:center;justify-content:center;
- background:rgba(20,83,45,.6);
-}
-.modal-box{
- position:relative;width:min(460px,100%);max-height:90vh;overflow:auto;
- padding:28px;background:#fff;border-radius:18px;
-}
-.close{
- position:absolute;right:12px;top:8px;border:0;background:none;
- color:var(--green);font-size:1.8rem;cursor:pointer;
-}
+.viewer-content th{background:var(--light)}
+.viewer-content img{display:block;max-width:100%;height:auto;margin:16px auto;border-radius:12px}
+.modal{position:fixed;inset:0;z-index:10;padding:16px;display:flex;align-items:center;justify-content:center;background:rgba(20,83,45,.6)}
+.modal-box{position:relative;width:min(460px,100%);max-height:90vh;overflow:auto;padding:28px;background:white;border-radius:18px}
+.close{position:absolute;right:12px;top:8px;border:0;background:none;color:var(--green);font-size:1.8rem;cursor:pointer}
 .profile{text-align:center}
-.profile h2{color:var(--green-dark);margin:10px 0 5px}
-.profile-info{margin-top:16px;padding:12px 16px;border-radius:12px;background:var(--green-light);text-align:left}
+.profile h2{color:var(--dark);margin:10px 0 5px}
+.profile-info{margin-top:16px;padding:12px 16px;border-radius:12px;background:var(--light);text-align:left}
 .profile-info p{margin:5px 0}
 .hidden{display:none!important}
-footer{text-align:center;padding:20px;background:var(--green-dark);color:var(--green-light)}
+footer{text-align:center;padding:20px;background:var(--dark);color:var(--light)}
 @media(max-width:750px){.members{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.members{grid-template-columns:1fr}main{padding-inline:14px}.viewer-content{padding:18px}}
 </style>
@@ -154,12 +98,12 @@ footer{text-align:center;padding:20px;background:var(--green-dark);color:var(--g
 
 <script>
 const members = [
- {id:"nghi", name:"Trần Lê Quỳnh Nghi", birthday:"14/12/2009", hobby:"Học ngoại ngữ, ngủ", image:"images/nghi.jpg"},
- {id:"ngoc", name:"Lê Dương Bảo Ngọc", birthday:"14/10/2009", hobby:"Thích mảu hừn iu sự dả dối", image:"images/ngoc.jpg"},
- {id:"thao", name:"Võ Thị Mai Thảo", birthday:"01/09/2009", hobby:"Ăn, ngủ, coi phim", image:"images/thao.jpg"},
- {id:"phuc", name:"Phạm Minh Phúc", birthday:"30/07/2009", hobby:"Xem phim, chơi game, bóng đá", image:"images/phuc.jpg"},
- {id:"phat", name:"Trần Huỳnh Phát", birthday:"11/02/2009", hobby:"Đánh bài", image:"images/phat.jpg"},
- {id:"minh", name:"Tống Hoàng Minh", birthday:"12/06/2009", hobby:"Cờ tướng", image:"images/minh.jpg"}
+ {id:"nghi",name:"Trần Lê Quỳnh Nghi",birthday:"14/12/2009",hobby:"Học ngoại ngữ, ngủ",image:"images/nghi.jpg"},
+ {id:"ngoc",name:"Lê Dương Bảo Ngọc",birthday:"14/10/2009",hobby:"Thích mảu hừn iu sự dả dối",image:"images/ngoc.jpg"},
+ {id:"thao",name:"Võ Thị Mai Thảo",birthday:"01/09/2009",hobby:"Ăn, ngủ, coi phim",image:"images/thao.jpg"},
+ {id:"phuc",name:"Phạm Minh Phúc",birthday:"30/07/2009",hobby:"Xem phim, chơi game, bóng đá",image:"images/phuc.jpg"},
+ {id:"phat",name:"Trần Huỳnh Phát",birthday:"11/02/2009",hobby:"Đánh bài",image:"images/phat.jpg"},
+ {id:"minh",name:"Tống Hoàng Minh",birthday:"12/06/2009",hobby:"Cờ tướng",image:"images/minh.jpg"}
 ];
 
 const lessons = [
@@ -170,21 +114,19 @@ const lessons = [
  <h3>LUYỆN TẬP</h3>
  <h4>Luyện tập 1: Muốn kết nối các máy tính trong phạm vi gia đình thành một mạng, nên dùng loại thiết bị kết nối nào?</h4>
  <ul>
- <li><b>Router Wi-Fi (Router không dây):</b> Đây là lựa chọn phổ biến nhất để tạo ra một mạng gia đình. Router Wi-Fi cung cấp kết nối Internet cho các thiết bị và cho phép chúng kết nối với nhau qua mạng Wi-Fi. Router cũng có thể có các cổng Ethernet để kết nối thiết bị có dây như máy tính để bàn, TV thông minh hoặc máy in.</li>
- <li><b>Switch Ethernet:</b> Nếu cần kết nối nhiều thiết bị có dây, có thể sử dụng switch Ethernet để mở rộng số cổng Ethernet trên router.</li>
- <li><b>Bộ kết nối Powerline:</b> Thiết bị này sử dụng dây điện trong nhà để truyền dữ liệu, giúp mở rộng mạng mà không cần kéo dây cáp Ethernet qua nhà.</li>
+ <li><b>Router Wi-Fi:</b> Lựa chọn phổ biến để tạo mạng gia đình, kết nối các thiết bị với Internet và với nhau qua Wi-Fi. Router cũng có thể có cổng Ethernet cho máy tính, TV thông minh hoặc máy in.</li>
+ <li><b>Switch Ethernet:</b> Dùng để mở rộng số cổng Ethernet khi cần kết nối nhiều thiết bị có dây.</li>
+ <li><b>Bộ kết nối Powerline:</b> Sử dụng dây điện trong nhà để truyền dữ liệu, giúp mở rộng mạng mà không cần kéo dây Ethernet.</li>
  </ul>
 
  <h4>Luyện tập 2: Làm thế nào để kết nối máy tính xách tay với Internet qua mạng điện thoại di động?</h4>
- <p>Có thể kết nối bằng một trong các cách sau:</p>
  <ul>
- <li>Dùng điện thoại di động phát Wi-Fi hoặc kết nối điện thoại với máy tính để chia sẻ Internet.</li>
+ <li>Dùng điện thoại di động phát Wi-Fi hoặc chia sẻ Internet với máy tính.</li>
  <li>Sử dụng thiết bị định tuyến hoặc modem di động 3G/4G có SIM.</li>
  </ul>
 
  <h3>VẬN DỤNG</h3>
  <h4>Vận dụng 1: Tìm hiểu mạng máy tính của trường và vẽ sơ đồ mạng.</h4>
- <p>Ví dụ sơ đồ mạng:</p>
  <pre>[Router] ─── [Kết nối WAN]
  │
  [Switch]
@@ -196,11 +138,11 @@ const lessons = [
 [Thiết bị không dây]</pre>
 
  <h4>Vận dụng 2: Wi-Fi trên xe khách đường dài hoạt động như thế nào?</h4>
- <p>Xe khách có thể cung cấp Wi-Fi thông qua hệ thống mạng không dây được lắp đặt trên xe:</p>
+ <p>Xe khách có thể cung cấp Wi-Fi thông qua hệ thống mạng không dây trên xe:</p>
  <ul>
- <li><b>Modem hoặc router di động:</b> Kết nối với mạng di động 3G, 4G hoặc 5G thông qua SIM.</li>
- <li><b>Anten và bộ khuếch đại tín hiệu:</b> Hỗ trợ thu sóng di động ổn định hơn khi xe di chuyển.</li>
- <li><b>Router Wi-Fi trên xe:</b> Phát mạng Wi-Fi để hành khách kết nối bằng điện thoại, máy tính bảng hoặc máy tính xách tay.</li>
+ <li><b>Modem hoặc router di động:</b> Kết nối mạng 3G, 4G hoặc 5G qua SIM.</li>
+ <li><b>Anten và bộ khuếch đại tín hiệu:</b> Hỗ trợ thu sóng ổn định hơn khi xe di chuyển.</li>
+ <li><b>Router Wi-Fi trên xe:</b> Phát Wi-Fi để hành khách kết nối bằng điện thoại, máy tính bảng hoặc máy tính xách tay.</li>
  </ul>
  `
  },
@@ -209,15 +151,15 @@ const lessons = [
  title:"Giao thức mạng và địa chỉ IP",
  content:`
  <h3>LUYỆN TẬP</h3>
- <h4>Luyện tập 1: Kể các quy tắc trong giao thức gọi điện thoại bằng máy bàn.</h4>
+ <h4>Luyện tập 1: Các quy tắc trong giao thức gọi điện thoại bằng máy bàn.</h4>
  <ul>
- <li><b>Nhấc ống nghe:</b> Báo cho trung tâm chuyển mạch biết người dùng muốn bắt đầu cuộc gọi.</li>
- <li><b>Quay số:</b> Người dùng nhập số điện thoại cần gọi.</li>
+ <li><b>Nhấc ống nghe:</b> Báo cho trung tâm chuyển mạch muốn bắt đầu cuộc gọi.</li>
+ <li><b>Quay số:</b> Nhập số điện thoại cần gọi.</li>
  <li><b>Chờ kết nối:</b> Hệ thống xử lý cuộc gọi; người gọi có thể nghe nhạc chờ hoặc thông báo.</li>
  <li><b>Báo chuông:</b> Điện thoại người nhận reo để báo có cuộc gọi đến.</li>
- <li><b>Nói chuyện:</b> Hai bên trao đổi sau khi cuộc gọi được kết nối.</li>
- <li><b>Kết thúc cuộc gọi:</b> Một bên đặt ống nghe xuống hoặc nhấn nút kết thúc.</li>
- <li><b>Báo lỗi:</b> Nếu cuộc gọi không thực hiện được, hệ thống phát tín hiệu hoặc thông báo lỗi.</li>
+ <li><b>Nói chuyện:</b> Hai bên trao đổi sau khi kết nối.</li>
+ <li><b>Kết thúc:</b> Một bên đặt ống nghe xuống hoặc nhấn nút kết thúc.</li>
+ <li><b>Báo lỗi:</b> Hệ thống phát tín hiệu hoặc thông báo nếu cuộc gọi không thực hiện được.</li>
  </ul>
 
  <h4>Luyện tập 2: Đổi địa chỉ IP giữa dạng nhị phân và thập phân.</h4>
@@ -231,25 +173,20 @@ const lessons = [
 
  <h3>VẬN DỤNG</h3>
  <h4>Vận dụng 1: Tìm hiểu giao thức tên miền DNS.</h4>
- <p><b>Lợi ích của tên miền:</b></p>
- <ul>
- <li>Dễ nhớ hơn địa chỉ IP dạng số.</li>
- <li>Tên miền được tổ chức theo cấp bậc, giúp dễ quản lý và nhận diện.</li>
- <li>Khi địa chỉ IP thay đổi, có thể cập nhật bản ghi DNS mà không cần đổi tên miền.</li>
- </ul>
+ <p><b>Lợi ích:</b> Tên miền dễ nhớ hơn địa chỉ IP; được tổ chức theo cấp bậc; khi địa chỉ IP thay đổi có thể cập nhật DNS mà không phải đổi tên miền.</p>
  <p><b>Các cấp tên miền:</b></p>
  <ul>
- <li><b>Tên miền cấp cao nhất (TLD):</b> Ví dụ .com, .org, .net, .edu, .vn.</li>
- <li><b>Tên miền cấp hai (SLD):</b> Ví dụ “example” trong example.com.</li>
- <li><b>Tên miền phụ (subdomain):</b> Ví dụ blog.example.com.</li>
+ <li><b>TLD:</b> Phần cuối tên miền, ví dụ .com, .org, .vn.</li>
+ <li><b>SLD:</b> Ví dụ “example” trong example.com.</li>
+ <li><b>Subdomain:</b> Ví dụ blog.example.com.</li>
  </ul>
- <p><b>Quản lý tên miền .vn:</b> Trung tâm Internet Việt Nam (VNNIC) là đơn vị quản lý tên miền quốc gia .vn.</p>
+ <p><b>Tên miền .vn:</b> Trung tâm Internet Việt Nam (VNNIC) quản lý tên miền quốc gia .vn.</p>
 
  <h4>Vận dụng 2: Tìm hiểu lệnh ping.</h4>
- <p>Ping dùng các gói tin ICMP Echo Request và Echo Reply để kiểm tra khả năng kết nối giữa các thiết bị. Thời gian phản hồi thường được tính bằng mili giây (ms).</p>
+ <p>Ping dùng các gói ICMP Echo Request và Echo Reply để kiểm tra kết nối giữa các thiết bị. Thời gian phản hồi thường được tính bằng mili giây (ms).</p>
  <p>Mở cửa sổ dòng lệnh và nhập:</p>
  <pre>ping www.google.com</pre>
- <p>Cũng có thể ping một địa chỉ IP, ví dụ: <code>ping 8.8.8.8</code>.</p>
+ <p>Cũng có thể ping địa chỉ IP, ví dụ: <code>ping 8.8.8.8</code>.</p>
  `
  },
  {
@@ -258,24 +195,24 @@ const lessons = [
  content:`
  <h3>LUYỆN TẬP</h3>
  <h4>Luyện tập 1: Ví dụ phần tử HTML không thể lồng nhau.</h4>
- <p>Trong một trang HTML, <code>&lt;head&gt;</code> và <code>&lt;body&gt;</code> là hai phần tử nằm riêng bên trong <code>&lt;html&gt;</code>; chúng không lồng bên trong nhau.</p>
+ <p><code>&lt;head&gt;</code> và <code>&lt;body&gt;</code> là hai phần tử nằm riêng bên trong <code>&lt;html&gt;</code>, không lồng bên trong nhau.</p>
  <ul>
  <li><code>&lt;head&gt;</code> chứa thông tin chung về trang web.</li>
  <li><code>&lt;body&gt;</code> chứa nội dung hiển thị trên trang.</li>
  </ul>
 
  <h4>Luyện tập 2: Tạo tệp HTML hiển thị một câu thơ.</h4>
- <pre>&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang="vi"&amp;gt;
-&amp;lt;head&amp;gt;
- &amp;lt;meta charset="UTF-8"&amp;gt;
- &amp;lt;title&amp;gt;Văn bản về sen&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
- &amp;lt;p&amp;gt;Trong đầm gì đẹp bằng sen, lá xanh bông trắng lại chen nhị vàng.&amp;lt;/p&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;</pre>
- <p>Cây thông tin: <code>html</code> chứa hai phần tử con là <code>head</code> và <code>body</code>; phần tử <code>body</code> chứa phần tử <code>p</code>.</p>
+ <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+ &lt;meta charset="UTF-8"&gt;
+ &lt;title&gt;Văn bản về sen&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;p&gt;Trong đầm gì đẹp bằng sen, lá xanh bông trắng lại chen nhị vàng.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+ <p>Cây thông tin: <code>html</code> chứa <code>head</code> và <code>body</code>; phần tử <code>body</code> chứa phần tử <code>p</code>.</p>
 
  <h3>VẬN DỤNG</h3>
  <h4>Vận dụng 1: Một số trang soạn thảo HTML trực tuyến.</h4>
@@ -286,34 +223,29 @@ const lessons = [
  </ul>
 
  <h4>Vận dụng 2: Ví dụ trang web về lịch sử phát triển HTML.</h4>
- <pre>&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang="vi"&amp;gt;
-&amp;lt;head&amp;gt;
- &amp;lt;meta charset="UTF-8"&amp;gt;
- &amp;lt;title&amp;gt;Lịch sử phát triển HTML&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
- &amp;lt;h1&amp;gt;Lịch sử phát triển HTML&amp;lt;/h1&amp;gt;
- &amp;lt;p&amp;gt;Tim Berners-Lee đưa ra ý tưởng về HTML tại CERN vào đầu những năm 1990.&amp;lt;/p&amp;gt;
- &amp;lt;p&amp;gt;HTML giúp thể hiện và chia sẻ các văn bản trên mạng.&amp;lt;/p&amp;gt;
- &amp;lt;img src="duong-dan-hinh-anh.jpg" alt="Hình minh họa"&amp;gt;
- &amp;lt;p&amp;gt;HTML tiếp tục phát triển cùng với công nghệ Internet. HTML5 ra đời năm 2014.&amp;lt;/p&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;</pre>
- <p>Thay <code>duong-dan-hinh-anh.jpg</code> bằng đường dẫn đến tệp ảnh của bạn.</p>
+ <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+ &lt;meta charset="UTF-8"&gt;
+ &lt;title&gt;Lịch sử phát triển HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;h1&gt;Lịch sử phát triển HTML&lt;/h1&gt;
+ &lt;p&gt;Tim Berners-Lee đưa ra ý tưởng về HTML tại CERN.&lt;/p&gt;
+ &lt;img src="hinh-anh.jpg" alt="Hình minh họa"&gt;
+ &lt;p&gt;HTML tiếp tục phát triển cùng với công nghệ Internet.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+ <p>Thay <code>hinh-anh.jpg</code> bằng đường dẫn đến tệp ảnh của bạn.</p>
  `
- }
-];
- ,
-{
+ },
+ {
  number:8,
  title:"Định dạng văn bản HTML",
  content:`
  <h3>LUYỆN TẬP</h3>
-
  <h4>Luyện tập 1: Sửa phần tử để làm nổi bật ý chính.</h4>
- <p>Thẻ <code>strong</code> và thẻ <code>em</code> được dùng để nhấn mạnh nội dung; thẻ <code>b</code> chỉ có tác dụng in đậm văn bản.</p>
- <p>Mã HTML:</p>
+ <p>Thẻ <code>strong</code> và <code>em</code> được dùng để nhấn mạnh nội dung; thẻ <code>b</code> chỉ có tác dụng in đậm văn bản.</p>
  <pre><code>&lt;p&gt;&lt;strong&gt;Thẻ strong&lt;/strong&gt; và &lt;em&gt;thẻ em&lt;/em&gt; được sử dụng để nhấn mạnh vào nội dung trong phần tử. Thẻ &lt;strong&gt;B&lt;/strong&gt; chỉ có tác dụng in đậm văn bản.&lt;/p&gt;</code></pre>
 
  <h4>Luyện tập 2: Trình bày nội dung “Internet tốc độ cao” bằng HTML.</h4>
@@ -338,63 +270,31 @@ const lessons = [
 &lt;/html&gt;</code></pre>
 
  <h3>VẬN DỤNG</h3>
-
  <h4>Vận dụng 1: Dùng một màu trong ảnh làm màu tiêu đề bài thơ.</h4>
  <ol>
- <li>Chọn màu trong bức ảnh muốn dùng cho tiêu đề.</li>
+ <li>Chọn màu muốn dùng trong bức ảnh.</li>
  <li>Tạo tiêu đề bằng thẻ <code>h1</code>, <code>h2</code> hoặc <code>h3</code>.</li>
- <li>Dùng công cụ lấy mã màu từ ảnh, rồi đặt màu đó cho thuộc tính CSS <code>color</code> của tiêu đề.</li>
+ <li>Dùng mã màu đó cho thuộc tính CSS <code>color</code>.</li>
  </ol>
- <pre><code>&lt;h1 style="color: #228B22;"&gt;Tên bài thơ&lt;/h1&gt;</code></pre>
+ <pre><code>&lt;h1 style="color:#228B22;"&gt;Tên bài thơ&lt;/h1&gt;</code></pre>
 
- <h4>Vận dụng 2: Các định dạng văn bản</h4>
- <ul>
- <li>Định dạng chữ đậm bằng thẻ <code>strong</code> hoặc <code>b</code>.</li>
- <li>Định dạng chữ thường bằng thẻ <code>p</code>.</li>
- <li>Thay đổi cỡ chữ bằng thuộc tính CSS <code>font-size</code>.</li>
- </ul>
- <p><i><div style="display:flex;align-items:center;justify-content:space-between;overflow:hidden;height:90px;padding:0 4px;font-family:serif;font-size:30px;font-weight:bold;white-space:nowrap">
- <span style="transform:translateY(25px)">0</span>
- <span style="transform:translateY(10px)">0</span>
- <span style="transform:translateY(-8px)">0</span>
- <span style="transform:translateY(-22px)">0</span>
- <span style="transform:translateY(-28px)">0</span>
- <span style="transform:translateY(-20px)">0</span>
- <span style="transform:translateY(-5px)">0</span>
- <span style="transform:translateY(14px)">0</span>
- <span style="transform:translateY(27px)">0</span>
- <span style="transform:translateY(14px)">0</span>
- <span style="transform:translateY(-5px)">0</span>
- <span style="transform:translateY(-22px)">0</span>
- <span style="transform:translateY(-28px)">0</span>
- <span style="transform:translateY(-20px)">0</span>
- <span style="transform:translateY(-5px)">0</span>
- <span style="transform:translateY(14px)">0</span>
- <span style="transform:translateY(27px)">0</span>
- <span style="transform:translateY(14px)">0</span>
- <span style="transform:translateY(-5px)">0</span>
- <span style="transform:translateY(-22px)">0</span>
- <span style="transform:translateY(-28px)">0</span>
- <span style="transform:translateY(-20px)">0</span>
- <span style="transform:translateY(-5px)">0</span>
- <span style="transform:translateY(14px)">0</span>
- <span style="transform:translateY(27px)">0</span>
- <span style="transform:translateY(14px)">0</span>
- <span style="transform:translateY(-5px)">0</span>
- <span style="transform:translateY(-22px)">0</span>
- <span style="transform:translateY(-28px)">0</span>
- <span style="transform:translateY(-20px)">0</span>
-</div></i></p>
+ <h4>Vận dụng 2: Ví dụ định dạng chữ theo hình minh họa.</h4>
+ <p>Có thể dùng các phần tử <code>span</code> và dịch chuyển từng ký tự để tạo đường lượn sóng như hình:</p>
+ <div style="display:flex;align-items:center;justify-content:space-between;overflow:hidden;height:90px;padding:0 4px;font-family:serif;font-size:30px;font-weight:bold;white-space:nowrap">
+ <span style="transform:translateY(25px)">0</span><span style="transform:translateY(10px)">0</span><span style="transform:translateY(-8px)">0</span><span style="transform:translateY(-22px)">0</span><span style="transform:translateY(-28px)">0</span><span style="transform:translateY(-20px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(27px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(-22px)">0</span><span style="transform:translateY(-28px)">0</span><span style="transform:translateY(-20px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(27px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(-22px)">0</span><span style="transform:translateY(-28px)">0</span><span style="transform:translateY(-20px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(27px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(-22px)">0</span><span style="transform:translateY(-28px)">0</span><span style="transform:translateY(-20px)">0</span>
+ </div>
+
+ <h4>Ảnh minh họa (nếu đã tải ảnh lên GitHub)</h4>
+ <img src="bai8-vandung2.png" alt="Hình minh họa Vận dụng 2 Bài 8" onerror="this.style.display='none'">
  `
-},
-{
+ },
+ {
  number:9,
  title:"Danh sách, bảng và liên kết HTML",
  content:`
  <h3>CÂU HỎI TRANG 53</h3>
-
  <h4>Tạo danh sách lồng nhau: mức 1 đánh số 1, 2, 3; mức 2 đánh số a, b, c.</h4>
- <p>Dùng thẻ <code>ol</code> cho danh sách ngoài và một thẻ <code>ol type="a"</code> lồng bên trong:</p>
+ <p>Dùng <code>ol</code> cho danh sách ngoài và <code>ol type="a"</code> cho danh sách con:</p>
  <pre><code>&lt;ol&gt;
  &lt;li&gt;Mục 1&lt;/li&gt;
  &lt;li&gt;Mục 2
@@ -407,23 +307,22 @@ const lessons = [
  &lt;li&gt;Mục 3&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
 
- <h4>Hoạt động 2: Nên dùng dạng biểu diễn nào cho thông tin món ăn?</h4>
- <p>Nên dùng <b>bảng</b>, vì mỗi món ăn có nhiều thông tin tương ứng như đơn giá, số lượng và tổng số tiền. Bảng giúp trình bày các thông tin theo hàng và cột, dễ đọc và so sánh.</p>
+ <h4>Hoạt động 2: Nên dùng danh sách hay bảng cho thông tin món ăn?</h4>
+ <p>Nên dùng <b>bảng</b>, vì mỗi món có nhiều thông tin như đơn giá, số lượng và tổng tiền. Bảng giúp sắp xếp thông tin theo hàng, cột và dễ so sánh.</p>
  <ul>
- <li><b>Danh sách:</b> dễ trình bày danh sách ngắn nhưng khó thể hiện nhiều thông tin của từng món.</li>
- <li><b>Danh sách mô tả:</b> phù hợp để mô tả từng mục, nhưng có thể dài và khó so sánh khi có nhiều món.</li>
- <li><b>Bảng:</b> sắp xếp thông tin rõ ràng theo cột, phù hợp với món ăn, đơn giá, số lượng và tổng tiền.</li>
+ <li><b>Danh sách:</b> dễ trình bày danh sách ngắn nhưng khó thể hiện nhiều thông tin cho từng món.</li>
+ <li><b>Danh sách mô tả:</b> phù hợp để mô tả từng mục nhưng có thể dài và khó so sánh.</li>
+ <li><b>Bảng:</b> trình bày rõ ràng các thông tin theo cột.</li>
  </ul>
 
  <h3>LUYỆN TẬP TRANG 56</h3>
-
- <h4>Tạo viền bảng bằng thuộc tính style và tô màu tên môn học.</h4>
+ <h4>Tạo viền bảng bằng thuộc tính style và tô màu các môn học.</h4>
  <pre><code>&lt;table style="border-collapse:collapse;"&gt;
  &lt;tr&gt;
  &lt;th style="border:2px solid blue;"&gt;Họ tên&lt;/th&gt;
- &lt;th style="border:2px solid blue;"&gt;Toán&lt;/th&gt;
- &lt;th style="border:2px solid blue;"&gt;Vật lí&lt;/th&gt;
- &lt;th style="border:2px solid blue;"&gt;Hóa học&lt;/th&gt;
+ &lt;th style="border:2px solid blue;"&gt;Điểm Toán&lt;/th&gt;
+ &lt;th style="border:2px solid blue;"&gt;Điểm Vật lí&lt;/th&gt;
+ &lt;th style="border:2px solid blue;"&gt;Điểm Hóa học&lt;/th&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td style="border:2px solid blue;"&gt;Nguyễn Văn A&lt;/td&gt;
@@ -467,13 +366,12 @@ with open("data_table.html", "w", encoding="utf-8") as file:
 print("Tạo tệp HTML thành công!")</code></pre>
 
  <h3>LUYỆN TẬP TRANG 61</h3>
-
  <h4>Luyện tập 1: Tạo liên kết quay về trang chủ CLB.html.</h4>
  <p>Đặt liên kết sau trong trang <code>thong_tin.html</code>:</p>
  <pre><code>&lt;a href="CLB.html"&gt;Quay về trang chủ&lt;/a&gt;</code></pre>
 
- <h4>Luyện tập 2: Tạo trang giới thiệu bản thân có liên kết tới trang web của ba bạn cùng lớp.</h4>
- <p>Ví dụ dưới đây dùng địa chỉ mẫu. Hãy thay tên và đường dẫn bằng thông tin thật của các bạn:</p>
+ <h4>Luyện tập 2: Tạo trang giới thiệu bản thân có liên kết tới trang của ba bạn cùng lớp.</h4>
+ <p>Ví dụ dưới đây dùng địa chỉ mẫu; hãy thay tên và đường dẫn bằng thông tin thật:</p>
  <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="vi"&gt;
 &lt;head&gt;
@@ -492,7 +390,8 @@ print("Tạo tệp HTML thành công!")</code></pre>
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
  `
-}
+ }
+];
 
 const $ = selector => document.querySelector(selector);
 const getMember = id => members.find(member => member.id === id);
