@@ -2,213 +2,400 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kho Tài Liệu Nhóm</title>
+
 <style>
-:root{--g9:#14532d;--g7:#15803d;--g5:#22c55e;--g2:#bbf7d0;--g1:#dcfce7;--g0:#f0fdf4;--sh:0 4px 14px rgba(21,128,61,.15)}
-*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --green-dark:#14532d;
+ --green:#15803d;
+ --green-bright:#22c55e;
+ --green-light:#dcfce7;
+ --page:#f0fdf4;
+ --text:#1f2937;
+ --shadow:0 5px 18px rgba(21,128,61,.13);
+}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"Segoe UI",Arial,sans-serif;background:var(--g0);color:#1f2937;line-height:1.5}
-.hero{background:linear-gradient(135deg,var(--g9),var(--g7) 60%,var(--g5));color:#fff;text-align:center;padding:56px 20px}
-.hero h1{font-size:2.2rem;margin-bottom:8px}
-main{max-width:1100px;margin:0 auto;padding:20px 20px 60px}
-.st{color:var(--g9);font-size:1.5rem;margin:32px 0 18px;padding-left:12px;border-left:5px solid var(--g5)}
-.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.mc{background:#fff;border-radius:16px;padding:22px 14px;text-align:center;cursor:pointer;box-shadow:var(--sh);border-top:5px solid var(--g5);transition:.2s}
-.mc:hover{transform:translateY(-5px);background:var(--g1)}
-.mc h3{color:var(--g9);font-size:1.05rem;margin:10px 0 4px}
-.role{display:inline-block;background:var(--g1);color:var(--g7);font-size:.8rem;padding:2px 10px;border-radius:99px}
-.more{display:block;margin-top:10px;font-size:.85rem;color:var(--g7);font-weight:600}
-.av{position:relative;width:84px;height:84px;border-radius:50%;margin:0 auto;overflow:hidden;background:linear-gradient(135deg,var(--g5),var(--g7));color:#fff;font-size:2rem;font-weight:700;display:flex;align-items:center;justify-content:center;border:3px solid var(--g2)}
-.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.av.big{width:120px;height:120px;font-size:3rem}
-.lg{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
-.lc{background:#fff;border:2px solid var(--g2);border-radius:14px;padding:16px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:.2s;box-shadow:var(--sh)}
-.lc:hover{border-color:var(--g5);transform:translateY(-3px)}
-.lc.on{background:var(--g7);border-color:var(--g7);color:#fff}
-.lc .no{font-size:1.3rem;font-weight:800;color:var(--g7)}
-.lc.on .no{color:#fff}
-.lc small{display:block;margin-top:6px;opacity:.75}
-.viewer{margin-top:24px;background:#fff;border-radius:16px;box-shadow:var(--sh);overflow:hidden;border:2px solid var(--g2)}
-.vh{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px;background:var(--g1)}
-.badge{background:var(--g7);color:#fff;padding:2px 12px;border-radius:99px;font-size:.8rem;font-weight:700}
-.vh h3{color:var(--g9);margin:8px 0 4px;font-size:1.3rem}
-.va{display:flex;gap:10px;align-items:flex-start}
-.btn{background:var(--g7);color:#fff;text-decoration:none;padding:8px 16px;border-radius:10px;font-weight:600;font-size:.9rem;border:2px solid var(--g7)}
-.btn:hover{background:var(--g9)}
-.btn.o{background:#fff;color:var(--g7)}
-.vc iframe{width:100%;height:75vh;border:0;display:block}
-.vc img{max-width:100%;display:block;margin:auto}
-.empty{padding:50px 20px;text-align:center;color:#6b7280}
-.modal{position:fixed;inset:0;background:rgba(20,83,45,.6);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}
-.mbox{background:#fff;border-radius:18px;max-width:460px;width:100%;max-height:90vh;overflow:auto;padding:28px;position:relative}
-.close{position:absolute;top:10px;right:14px;border:0;background:none;font-size:1.8rem;cursor:pointer;color:var(--g7)}
+body{
+ margin:0;
+ font-family:"Segoe UI",Arial,sans-serif;
+ color:var(--text);
+ background:var(--page);
+ line-height:1.65;
+}
+.hero{
+ padding:55px 20px;
+ text-align:center;
+ color:white;
+ background:linear-gradient(135deg,var(--green-dark),var(--green),var(--green-bright));
+}
+.hero h1{margin:0 0 8px;font-size:clamp(1.8rem,5vw,2.7rem)}
+.hero p{margin:0;opacity:.92}
+main{width:min(1100px,100%);margin:auto;padding:24px 20px 60px}
+.section-title{
+ color:var(--green-dark);
+ font-size:1.5rem;
+ margin:32px 0 18px;
+ padding-left:12px;
+ border-left:5px solid var(--green-bright);
+}
+.members{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.member{
+ background:#fff;
+ border-top:5px solid var(--green-bright);
+ border-radius:16px;
+ padding:22px 14px;
+ text-align:center;
+ box-shadow:var(--shadow);
+ cursor:pointer;
+ transition:.2s;
+}
+.member:hover{transform:translateY(-4px);background:var(--green-light)}
+.avatar{
+ width:84px;height:84px;margin:auto;border-radius:50%;
+ display:flex;align-items:center;justify-content:center;
+ position:relative;overflow:hidden;
+ color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green));
+ border:3px solid var(--green-light);font-size:2rem;font-weight:bold;
+}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.avatar.large{width:120px;height:120px;font-size:3rem}
+.member h3{color:var(--green-dark);font-size:1.05rem;margin:10px 0 4px}
+.pill{display:inline-block;padding:2px 11px;border-radius:99px;background:var(--green-light);color:var(--green);font-size:.83rem}
+.more{display:block;margin-top:10px;color:var(--green);font-weight:600;font-size:.9rem}
+.lesson-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.lesson-button{
+ border:2px solid #bbf7d0;border-radius:14px;padding:16px;
+ background:white;text-align:left;color:var(--text);font:inherit;
+ cursor:pointer;box-shadow:var(--shadow);transition:.2s;
+}
+.lesson-button:hover{transform:translateY(-3px);border-color:var(--green-bright)}
+.lesson-button.active{background:var(--green);border-color:var(--green);color:#fff}
+.lesson-number{display:block;color:var(--green);font-size:1.3rem;font-weight:800}
+.lesson-button.active .lesson-number{color:#fff}
+.lesson-title{display:block;font-weight:600}
+.viewer{
+ margin-top:24px;background:#fff;border:1px solid #bbf7d0;
+ border-radius:16px;box-shadow:var(--shadow);overflow:hidden;
+}
+.viewer-header{padding:20px 24px;background:var(--green-light)}
+.viewer-header h2{margin:8px 0 2px;color:var(--green-dark)}
+.viewer-content{padding:22px 26px;overflow-wrap:anywhere}
+.viewer-content h3{margin:24px 0 8px;color:var(--green-dark)}
+.viewer-content h4{margin:18px 0 6px;color:var(--green)}
+.viewer-content ul,.viewer-content ol{padding-left:24px}
+.viewer-content li{margin:6px 0}
+.viewer-content pre{
+ white-space:pre-wrap;overflow:auto;padding:14px;
+ background:var(--page);border:1px solid #bbf7d0;border-radius:10px;
+ font:14px/1.5 Consolas,monospace;
+}
+.viewer-content table{border-collapse:collapse;margin:12px 0;width:100%}
+.viewer-content th,.viewer-content td{border:1px solid #bbf7d0;padding:8px;text-align:left}
+.viewer-content th{background:var(--green-light)}
+.modal{
+ position:fixed;inset:0;z-index:10;padding:16px;
+ display:flex;align-items:center;justify-content:center;
+ background:rgba(20,83,45,.6);
+}
+.modal-box{
+ position:relative;width:min(460px,100%);max-height:90vh;overflow:auto;
+ padding:28px;background:#fff;border-radius:18px;
+}
+.close{
+ position:absolute;right:12px;top:8px;border:0;background:none;
+ color:var(--green);font-size:1.8rem;cursor:pointer;
+}
 .profile{text-align:center}
-.profile h2{color:var(--g9);margin:10px 0 6px}
-.profile h4{text-align:left;color:var(--g7);margin-top:14px}
-.profile ul{text-align:left;margin:6px 0 0 20px}
-.profile a{color:var(--g7)}
-.info{background:var(--g1);border-radius:12px;padding:12px 16px;margin:14px 0;text-align:left}
-.info p{margin:4px 0}
+.profile h2{color:var(--green-dark);margin:10px 0 5px}
+.profile-info{margin-top:16px;padding:12px 16px;border-radius:12px;background:var(--green-light);text-align:left}
+.profile-info p{margin:5px 0}
 .hidden{display:none!important}
-footer{text-align:center;padding:22px;background:var(--g9);color:var(--g2);font-size:.9rem}
-@media(max-width:800px){.mg{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.mg{grid-template-columns:1fr}.hero h1{font-size:1.7rem}}
+footer{text-align:center;padding:20px;background:var(--green-dark);color:var(--green-light)}
+@media(max-width:750px){.members{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.members{grid-template-columns:1fr}main{padding-inline:14px}.viewer-content{padding:18px}}
 </style>
 </head>
-<body>
 
+<body>
 <header class="hero">
  <h1>🌿 Kho Tài Liệu Nhóm</h1>
  <p>Nơi lưu trữ và chia sẻ tài liệu của các thành viên</p>
 </header>
 
 <main>
- <h2 class="st">Thành viên</h2>
- <div id="members" class="mg"></div>
+ <section>
+ <h2 class="section-title">Thành viên</h2>
+ <div id="member-list" class="members"></div>
+ </section>
 
- <h2 class="st">Tài liệu theo bài</h2>
- <div id="lessons" class="lg"></div>
-
- <div id="viewer" class="viewer hidden">
- <div class="vh">
- <div>
- <span id="vb" class="badge"></span>
- <h3 id="vt"></h3>
- <p id="vd"></p>
- <small id="vm"></small>
+ <section>
+ <h2 class="section-title">Tài liệu theo bài</h2>
+ <div id="lesson-list" class="lesson-grid"></div>
+ <article id="viewer" class="viewer hidden">
+ <div class="viewer-header">
+ <span id="viewer-label" class="pill"></span>
+ <h2 id="viewer-title"></h2>
  </div>
- <div class="va">
- <a id="vo" class="btn" target="_blank">Mở tab mới</a>
- <a id="vl" class="btn o" download>Tải về</a>
- </div>
- </div>
- <div id="vc" class="vc"></div>
- </div>
+ <div id="viewer-content" class="viewer-content"></div>
+ </article>
+ </section>
 </main>
 
 <div id="modal" class="modal hidden">
- <div class="mbox">
- <button id="mclose" class="close">&times;</button>
- <div id="mbody"></div>
+ <div class="modal-box">
+ <button id="close-modal" class="close" aria-label="Đóng">&times;</button>
+ <div id="profile-content"></div>
  </div>
 </div>
 
-<footer>© 2025 – Nhóm sinh viên · Hosted on GitHub Pages</footer>
+<footer>Kho Tài Liệu Nhóm</footer>
 
 <script>
-/* ===== ✏️ SỬA DỮ LIỆU Ở ĐÂY ===== */
 const members = [
- {id:"nghi", name:"Trần Lê Quỳnh Nghi", avatar:"images/nghi.jpg", birthday:"14/12/2009", hobby:"Học ngoại ngữ, ngủ"},
- {id:"ngoc", name:"Lê Dương Bảo Ngọc", avatar:"images/ngoc.jpg", birthday:"14/10/2009", hobby:"Thích mảu hừn iu sự dả dối"},
- {id:"thao", name:"Võ Thị Mai Thảo", avatar:"images/thao.jpg", birthday:"01/09/2009", hobby:"Ăn, ngủ, coi phim"},
- {id:"phuc", name:"Phạm Minh Phúc", avatar:"images/phuc.jpg", birthday:"30/07/2009", hobby:"Xem phim, chơi game, bóng đá"},
- {id:"phat", name:"Trần Huỳnh Phát", avatar:"images/phat.jpg", birthday:"11/02/2009", hobby:"Đánh bài"},
- {id:"minh", name:"Tống Hoàng Minh", avatar:"images/minh.jpg", birthday:"12/06/2009", hobby:"Cờ tướng"}
+ {id:"nghi", name:"Trần Lê Quỳnh Nghi", birthday:"14/12/2009", hobby:"Học ngoại ngữ, ngủ", image:"images/nghi.jpg"},
+ {id:"ngoc", name:"Lê Dương Bảo Ngọc", birthday:"14/10/2009", hobby:"Thích mảu hừn iu sự dả dối", image:"images/ngoc.jpg"},
+ {id:"thao", name:"Võ Thị Mai Thảo", birthday:"01/09/2009", hobby:"Ăn, ngủ, coi phim", image:"images/thao.jpg"},
+ {id:"phuc", name:"Phạm Minh Phúc", birthday:"30/07/2009", hobby:"Xem phim, chơi game, bóng đá", image:"images/phuc.jpg"},
+ {id:"phat", name:"Trần Huỳnh Phát", birthday:"11/02/2009", hobby:"Đánh bài", image:"images/phat.jpg"},
+ {id:"minh", name:"Tống Hoàng Minh", birthday:"12/06/2009", hobby:"Cờ tướng", image:"images/minh.jpg"}
 ];
 
 const lessons = [
- {title:"Tên bài 1", desc:"Mô tả bài 1.", date:"2025-01-10", file:"docs/bai1.pdf"},
- {title:"Tên bài 2", desc:"Mô tả bài 2.", date:"2025-01-17", file:"docs/bai2.pdf"},
- {title:"Tên bài 3", desc:"Mô tả bài 3.", date:"2025-01-24", file:"docs/bai3.pptx"},
- {title:"Tên bài 4", desc:"Mô tả bài 4.", date:"2025-02-01", file:"docs/bai4.docx"},
- {title:"Tên bài 5", desc:"Mô tả bài 5.", date:"2025-02-08", file:"docs/bai5.pdf"},
- {title:"Tên bài 6", desc:"Mô tả bài 6.", date:"2025-02-15", file:"docs/bai6.pdf"}
+ {
+ number:3,
+ title:"Thiết bị mạng",
+ content:`
+ <h3>LUYỆN TẬP</h3>
+ <h4>Luyện tập 1: Muốn kết nối các máy tính trong phạm vi gia đình thành một mạng, nên dùng loại thiết bị kết nối nào?</h4>
+ <ul>
+ <li><b>Router Wi-Fi (Router không dây):</b> Đây là lựa chọn phổ biến nhất để tạo ra một mạng gia đình. Router Wi-Fi cung cấp kết nối Internet cho các thiết bị và cho phép chúng kết nối với nhau qua mạng Wi-Fi. Router cũng có thể có các cổng Ethernet để kết nối thiết bị có dây như máy tính để bàn, TV thông minh hoặc máy in.</li>
+ <li><b>Switch Ethernet:</b> Nếu cần kết nối nhiều thiết bị có dây, có thể sử dụng switch Ethernet để mở rộng số cổng Ethernet trên router.</li>
+ <li><b>Bộ kết nối Powerline:</b> Thiết bị này sử dụng dây điện trong nhà để truyền dữ liệu, giúp mở rộng mạng mà không cần kéo dây cáp Ethernet qua nhà.</li>
+ </ul>
+
+ <h4>Luyện tập 2: Làm thế nào để kết nối máy tính xách tay với Internet qua mạng điện thoại di động?</h4>
+ <p>Có thể kết nối bằng một trong các cách sau:</p>
+ <ul>
+ <li>Dùng điện thoại di động phát Wi-Fi hoặc kết nối điện thoại với máy tính để chia sẻ Internet.</li>
+ <li>Sử dụng thiết bị định tuyến hoặc modem di động 3G/4G có SIM.</li>
+ </ul>
+
+ <h3>VẬN DỤNG</h3>
+ <h4>Vận dụng 1: Tìm hiểu mạng máy tính của trường và vẽ sơ đồ mạng.</h4>
+ <p>Ví dụ sơ đồ mạng:</p>
+ <pre>[Router] ─── [Kết nối WAN]
+ │
+ [Switch]
+ / | \\
+[PC1][PC2][Máy in]
+ │
+ [Điểm truy cập Wi-Fi (WAP)]
+ │
+[Thiết bị không dây]</pre>
+
+ <h4>Vận dụng 2: Wi-Fi trên xe khách đường dài hoạt động như thế nào?</h4>
+ <p>Xe khách có thể cung cấp Wi-Fi thông qua hệ thống mạng không dây được lắp đặt trên xe:</p>
+ <ul>
+ <li><b>Modem hoặc router di động:</b> Kết nối với mạng di động 3G, 4G hoặc 5G thông qua SIM.</li>
+ <li><b>Anten và bộ khuếch đại tín hiệu:</b> Hỗ trợ thu sóng di động ổn định hơn khi xe di chuyển.</li>
+ <li><b>Router Wi-Fi trên xe:</b> Phát mạng Wi-Fi để hành khách kết nối bằng điện thoại, máy tính bảng hoặc máy tính xách tay.</li>
+ </ul>
+ `
+ },
+ {
+ number:4,
+ title:"Giao thức mạng và địa chỉ IP",
+ content:`
+ <h3>LUYỆN TẬP</h3>
+ <h4>Luyện tập 1: Kể các quy tắc trong giao thức gọi điện thoại bằng máy bàn.</h4>
+ <ul>
+ <li><b>Nhấc ống nghe:</b> Báo cho trung tâm chuyển mạch biết người dùng muốn bắt đầu cuộc gọi.</li>
+ <li><b>Quay số:</b> Người dùng nhập số điện thoại cần gọi.</li>
+ <li><b>Chờ kết nối:</b> Hệ thống xử lý cuộc gọi; người gọi có thể nghe nhạc chờ hoặc thông báo.</li>
+ <li><b>Báo chuông:</b> Điện thoại người nhận reo để báo có cuộc gọi đến.</li>
+ <li><b>Nói chuyện:</b> Hai bên trao đổi sau khi cuộc gọi được kết nối.</li>
+ <li><b>Kết thúc cuộc gọi:</b> Một bên đặt ống nghe xuống hoặc nhấn nút kết thúc.</li>
+ <li><b>Báo lỗi:</b> Nếu cuộc gọi không thực hiện được, hệ thống phát tín hiệu hoặc thông báo lỗi.</li>
+ </ul>
+
+ <h4>Luyện tập 2: Đổi địa chỉ IP giữa dạng nhị phân và thập phân.</h4>
+ <table>
+ <thead><tr><th>Dạng nhị phân</th><th>Dạng thập phân</th></tr></thead>
+ <tbody>
+ <tr><td>11000000 10101000 00001101 11010010</td><td>192.168.13.210</td></tr>
+ <tr><td>10000011 11010110 00010111 00010000</td><td>131.214.23.16</td></tr>
+ </tbody>
+ </table>
+
+ <h3>VẬN DỤNG</h3>
+ <h4>Vận dụng 1: Tìm hiểu giao thức tên miền DNS.</h4>
+ <p><b>Lợi ích của tên miền:</b></p>
+ <ul>
+ <li>Dễ nhớ hơn địa chỉ IP dạng số.</li>
+ <li>Tên miền được tổ chức theo cấp bậc, giúp dễ quản lý và nhận diện.</li>
+ <li>Khi địa chỉ IP thay đổi, có thể cập nhật bản ghi DNS mà không cần đổi tên miền.</li>
+ </ul>
+ <p><b>Các cấp tên miền:</b></p>
+ <ul>
+ <li><b>Tên miền cấp cao nhất (TLD):</b> Ví dụ .com, .org, .net, .edu, .vn.</li>
+ <li><b>Tên miền cấp hai (SLD):</b> Ví dụ “example” trong example.com.</li>
+ <li><b>Tên miền phụ (subdomain):</b> Ví dụ blog.example.com.</li>
+ </ul>
+ <p><b>Quản lý tên miền .vn:</b> Trung tâm Internet Việt Nam (VNNIC) là đơn vị quản lý tên miền quốc gia .vn.</p>
+
+ <h4>Vận dụng 2: Tìm hiểu lệnh ping.</h4>
+ <p>Ping dùng các gói tin ICMP Echo Request và Echo Reply để kiểm tra khả năng kết nối giữa các thiết bị. Thời gian phản hồi thường được tính bằng mili giây (ms).</p>
+ <p>Mở cửa sổ dòng lệnh và nhập:</p>
+ <pre>ping www.google.com</pre>
+ <p>Cũng có thể ping một địa chỉ IP, ví dụ: <code>ping 8.8.8.8</code>.</p>
+ `
+ },
+ {
+ number:7,
+ title:"HTML và cây thông tin trang web",
+ content:`
+ <h3>LUYỆN TẬP</h3>
+ <h4>Luyện tập 1: Ví dụ phần tử HTML không thể lồng nhau.</h4>
+ <p>Trong một trang HTML, <code>&lt;head&gt;</code> và <code>&lt;body&gt;</code> là hai phần tử nằm riêng bên trong <code>&lt;html&gt;</code>; chúng không lồng bên trong nhau.</p>
+ <ul>
+ <li><code>&lt;head&gt;</code> chứa thông tin chung về trang web.</li>
+ <li><code>&lt;body&gt;</code> chứa nội dung hiển thị trên trang.</li>
+ </ul>
+
+ <h4>Luyện tập 2: Tạo tệp HTML hiển thị một câu thơ.</h4>
+ <pre>&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang="vi"&amp;gt;
+&amp;lt;head&amp;gt;
+ &amp;lt;meta charset="UTF-8"&amp;gt;
+ &amp;lt;title&amp;gt;Văn bản về sen&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+ &amp;lt;p&amp;gt;Trong đầm gì đẹp bằng sen, lá xanh bông trắng lại chen nhị vàng.&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;</pre>
+ <p>Cây thông tin: <code>html</code> chứa hai phần tử con là <code>head</code> và <code>body</code>; phần tử <code>body</code> chứa phần tử <code>p</code>.</p>
+
+ <h3>VẬN DỤNG</h3>
+ <h4>Vận dụng 1: Một số trang soạn thảo HTML trực tuyến.</h4>
+ <ul>
+ <li><a href="https://jsfiddle.net/" target="_blank" rel="noopener">JSFiddle</a></li>
+ <li><a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a></li>
+ <li><a href="https://replit.com/" target="_blank" rel="noopener">Replit</a></li>
+ </ul>
+
+ <h4>Vận dụng 2: Ví dụ trang web về lịch sử phát triển HTML.</h4>
+ <pre>&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang="vi"&amp;gt;
+&amp;lt;head&amp;gt;
+ &amp;lt;meta charset="UTF-8"&amp;gt;
+ &amp;lt;title&amp;gt;Lịch sử phát triển HTML&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+ &amp;lt;h1&amp;gt;Lịch sử phát triển HTML&amp;lt;/h1&amp;gt;
+ &amp;lt;p&amp;gt;Tim Berners-Lee đưa ra ý tưởng về HTML tại CERN vào đầu những năm 1990.&amp;lt;/p&amp;gt;
+ &amp;lt;p&amp;gt;HTML giúp thể hiện và chia sẻ các văn bản trên mạng.&amp;lt;/p&amp;gt;
+ &amp;lt;img src="duong-dan-hinh-anh.jpg" alt="Hình minh họa"&amp;gt;
+ &amp;lt;p&amp;gt;HTML tiếp tục phát triển cùng với công nghệ Internet. HTML5 ra đời năm 2014.&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;</pre>
+ <p>Thay <code>duong-dan-hinh-anh.jpg</code> bằng đường dẫn đến tệp ảnh của bạn.</p>
+ `
+ }
 ];
 
-/* ===== CODE XỬ LÝ (không cần sửa) ===== */
-const $ = s => document.querySelector(s);
-const getM = id => members.find(m => m.id === id);
-const initial = n => n.trim().split(" ").pop()[0].toUpperCase();
+const $ = selector => document.querySelector(selector);
+const getMember = id => members.find(member => member.id === id);
 
-function avatar(m, big){
- const img = m.avatar ? `<img src="${m.avatar}" alt="" onerror="this.remove()">` : "";
- return `<div class="av ${big ? "big" : ""}"><span>${initial(m.name)}</span>${img}</div>`;
+function initials(name){
+ return name.trim().split(" ").pop().charAt(0).toUpperCase();
+}
+
+function avatarHTML(member, large=false){
+ const photo = member.image
+ ? `<img src="${member.image}" alt="" onerror="this.remove()">`
+ : "";
+ return `<div class="avatar ${large ? "large" : ""}">
+ <span>${initials(member.name)}</span>${photo}
+ </div>`;
 }
 
 function renderMembers(){
- $("#members").innerHTML = members.map(m => `
- <div class="mc" data-id="${m.id}">
- ${avatar(m)}
- <h3>${m.name}</h3>
- <span class="role">Thành viên</span>
+ $("#member-list").innerHTML = members.map(member => `
+ <article class="member" data-id="${member.id}" tabindex="0">
+ ${avatarHTML(member)}
+ <h3>${member.name}</h3>
+ <span class="pill">Thành viên</span>
  <span class="more">Xem giới thiệu →</span>
- </div>`).join("");
- document.querySelectorAll(".mc").forEach(c => c.onclick = () => openProfile(c.dataset.id));
+ </article>
+ `).join("");
+
+ document.querySelectorAll(".member").forEach(card => {
+ card.addEventListener("click", () => showProfile(card.dataset.id));
+ card.addEventListener("keydown", event => {
+ if(event.key === "Enter" || event.key === " "){
+ event.preventDefault();
+ showProfile(card.dataset.id);
+ }
+ });
+ });
 }
 
-function openProfile(id){
- const m = getM(id);
- const mine = lessons.map((l,i) => ({...l, i})).filter(l => l.author === id);
- const list = mine.length
- ? mine.map(l => `<li><a href="#" data-i="${l.i}">Bài ${l.i+1}: ${l.title}</a></li>`).join("")
- : "<li>Chưa có bài nào.</li>";
- $("#mbody").innerHTML = `
+function showProfile(id){
+ const member = getMember(id);
+ $("#profile-content").innerHTML = `
  <div class="profile">
- ${avatar(m, true)}
- <h2>${m.name}</h2>
- <span class="role">Thành viên</span>
- <div class="info">
- <p>🎂 <b>Ngày sinh:</b> ${m.birthday}</p>
- <p>⭐ <b>Sở thích:</b> ${m.hobby}</p>
+ ${avatarHTML(member, true)}
+ <h2>${member.name}</h2>
+ <span class="pill">Thành viên</span>
+ <div class="profile-info">
+ <p>🎂 <b>Ngày sinh:</b> ${member.birthday}</p>
+ <p>⭐ <b>Sở thích:</b> ${member.hobby}</p>
  </div>
- <h4>Phụ trách (${mine.length} bài)</h4>
- <ul>${list}</ul>
- </div>`;
- $("#mbody").querySelectorAll("[data-i]").forEach(a => a.onclick = e => {
- e.preventDefault();
- closeModal();
- openLesson(+a.dataset.i);
- });
+ </div>
+ `;
  $("#modal").classList.remove("hidden");
 }
 
-function closeModal(){ $("#modal").classList.add("hidden"); }
-$("#mclose").onclick = closeModal;
-$("#modal").onclick = e => { if (e.target.id === "modal") closeModal(); };
-document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+function closeProfile(){
+ $("#modal").classList.add("hidden");
+}
 
 function renderLessons(){
- $("#lessons").innerHTML = lessons.map((l,i) => `
- <button class="lc" data-i="${i}">
- <div class="no">Bài ${i+1}</div>
- <div>${l.title}</div>
- </button>`).join("");
- document.querySelectorAll(".lc").forEach(b => b.onclick = () => openLesson(+b.dataset.i));
+ $("#lesson-list").innerHTML = lessons.map((lesson,index) => `
+ <button class="lesson-button" data-index="${index}">
+ <span class="lesson-number">Bài ${lesson.number}</span>
+ <span class="lesson-title">${lesson.title}</span>
+ </button>
+ `).join("");
+
+ document.querySelectorAll(".lesson-button").forEach(button => {
+ button.addEventListener("click", () => showLesson(Number(button.dataset.index)));
+ });
 }
 
-function openLesson(i){
- const l = lessons[i], m = getM(l.author);
- document.querySelectorAll(".lc").forEach((b,k) => b.classList.toggle("on", k === i));
- $("#vb").textContent = "Bài " + (i+1);
- $("#vt").textContent = l.title;
- $("#vd").textContent = l.desc;
- $("#vm").textContent = "📅 " + l.date;
- $("#vo").href = l.file || "#";
- $("#vl").href = l.file || "#";
+function showLesson(index){
+ const lesson = lessons[index];
 
- const ext = l.file ? l.file.split(".").pop().toLowerCase() : "";
- let html;
- if (!l.file) {
- html = `<div class="empty">Bài này chưa có tài liệu.</div>`;
- } else if (ext === "pdf") {
- html = `<iframe src="${l.file}"></iframe>`;
- } else if (["png","jpg","jpeg","gif","webp"].includes(ext)) {
- html = `<img src="${l.file}" alt="">`;
- } else if (["doc","docx","ppt","pptx","xls","xlsx"].includes(ext)) {
- if (location.protocol === "file:") {
- html = `<div class="empty">File Word/PowerPoint/Excel chỉ xem trực tiếp được khi web đã đưa lên GitHub Pages. Bạn bấm "Tải về" nhé.</div>`;
- } else {
- const url = new URL(l.file, location.href).href;
- html = `<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(url)}"></iframe>`;
- }
- } else {
- html = `<div class="empty">Không xem trực tiếp được loại file này. Hãy bấm "Tải về".</div>`;
- }
- $("#vc").innerHTML = html;
+ document.querySelectorAll(".lesson-button").forEach((button,i) => {
+ button.classList.toggle("active", i === index);
+ });
+
+ $("#viewer-label").textContent = "BÀI " + lesson.number;
+ $("#viewer-title").textContent = lesson.title;
+ $("#viewer-content").innerHTML = lesson.content;
  $("#viewer").classList.remove("hidden");
- $("#viewer").scrollIntoView({behavior:"smooth", block:"start"});
+ $("#viewer").scrollIntoView({behavior:"smooth",block:"start"});
 }
+
+$("#close-modal").addEventListener("click", closeProfile);
+$("#modal").addEventListener("click", event => {
+ if(event.target.id === "modal") closeProfile();
+});
+document.addEventListener("keydown", event => {
+ if(event.key === "Escape") closeProfile();
+});
 
 renderMembers();
 renderLessons();
