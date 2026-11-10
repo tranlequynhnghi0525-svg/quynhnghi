@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kho Tài Liệu Nhóm</title>
-
 <style>
 :root{
  --dark:#14532d;--green:#15803d;--bright:#22c55e;
@@ -397,6 +396,81 @@ print("Tạo tệp HTML thành công!")</code></pre>
  `
  }
 ];
+ {
+ number:11,
+ title:"Chèn ảnh và khung nội tuyến",
+ content:`
+ <h3>LUYỆN TẬP</h3>
+ <h4>Luyện tập 1: Ảnh gốc 720 x 450 pixel được chèn bằng lệnh bên dưới. Ảnh trong trang web có kích thước bao nhiêu?</h4>
+ <pre><code>&lt;img src="images/1.png" alt="chiếc lá" width="600"&gt;</code></pre>
+ <p>Thuộc tính <code>width="600"</code> đặt chiều rộng của ảnh là 600 pixel. Vì không chỉ định chiều cao, trình duyệt sẽ tự động điều chỉnh chiều cao theo đúng tỉ lệ của ảnh gốc.</p>
+ <ul>
+ <li>Tỉ lệ ảnh gốc: chiều rộng 720, chiều cao 450.</li>
+ <li>Chiều cao ảnh trong trang web: 600 × 450 ÷ 720 = <b>375 pixel</b>.</li>
+ </ul>
+ <p><b>Kết luận:</b> ảnh trong trang web có kích thước <b>600 × 375 pixel</b>.</p>
+
+ <h4>Luyện tập 2 (trang 66): Chèn thêm một số ảnh của mình vào trang web giới thiệu bản thân.</h4>
+ <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+ &lt;meta charset="UTF-8"&gt;
+ &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+ &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là trang web giới thiệu về bản thân tôi.&lt;/p&gt;
+
+ &lt;!-- Chèn ảnh của bạn --&gt;
+ &lt;h2&gt;Ảnh của tôi&lt;/h2&gt;
+ &lt;img src="path_to_your_image/image1.jpg" alt="Ảnh của bạn"&gt;
+ &lt;img src="path_to_your_image/image2.jpg" alt="Ảnh của bạn"&gt;
+ &lt;img src="path_to_your_image/image3.jpg" alt="Ảnh của bạn"&gt;
+
+ &lt;!-- Bạn cùng lớp --&gt;
+ &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+ &lt;ul&gt;
+ &lt;li&gt;&lt;a href="https://www.facebook.com/friend1" target="_blank"&gt;Facebook của Bạn 1&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href="https://www.facebook.com/friend2" target="_blank"&gt;Facebook của Bạn 2&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href="https://www.facebook.com/friend3" target="_blank"&gt;Facebook của Bạn 3&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+
+ &lt;p&gt;Cảm ơn bạn đã ghé thăm!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+ <h3>VẬN DỤNG</h3>
+ <h4>Vận dụng (trang 66): Tạo khung nội tuyến và liên kết đến bài hát yêu thích (ví dụ trên YouTube).</h4>
+ <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+ &lt;meta charset="UTF-8"&gt;
+ &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+ &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là trang web giới thiệu về bản thân tôi.&lt;/p&gt;
+
+ &lt;!-- Khung nội tuyến chứa video yêu thích từ YouTube --&gt;
+ &lt;h2&gt;Bài hát yêu thích của tôi&lt;/h2&gt;
+ &lt;iframe width="560" height="315"
+ src="https://www.youtube.com/embed/video_id"
+ frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+ &lt;!-- Bạn cùng lớp --&gt;
+ &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+ &lt;ul&gt;
+ &lt;li&gt;&lt;a href="https://www.facebook.com/friend1" target="_blank"&gt;Facebook của Bạn 1&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href="https://www.facebook.com/friend2" target="_blank"&gt;Facebook của Bạn 2&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href="https://www.facebook.com/friend3" target="_blank"&gt;Facebook của Bạn 3&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+
+ &lt;p&gt;Cảm ơn bạn đã ghé thăm!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+ <p>Thay <code>video_id</code> bằng mã video trong đường dẫn YouTube. Ví dụ link <code>https://www.youtube.com/watch?v=abc123</code> thì mã video là <code>abc123</code>.</p>
+ `
+ }
 
 const $ = selector => document.querySelector(selector);
 const getMember = id => members.find(member => member.id === id);
