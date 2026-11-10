@@ -43,6 +43,7 @@ main{width:min(1100px,100%);margin:auto;padding:24px 20px 60px}
 .viewer-content th,.viewer-content td{border:1px solid #bbf7d0;padding:8px;text-align:left}
 .viewer-content th{background:var(--light)}
 .viewer-content img{display:block;max-width:100%;height:auto;margin:16px auto;border-radius:12px}
+.wave{display:flex;align-items:center;justify-content:space-between;overflow:hidden;height:90px;padding:0 4px;font-family:serif;font-size:30px;font-weight:bold;white-space:nowrap}
 .profile-page{width:min(800px,100%);margin:32px auto 60px;padding:0 20px}
 .profile-card{background:white;border-radius:18px;box-shadow:var(--shadow);padding:28px;border-top:6px solid var(--bright)}
 .back-button{border:0;border-radius:10px;padding:10px 16px;margin-bottom:22px;background:var(--green);color:white;font:inherit;font-weight:600;cursor:pointer}
@@ -263,9 +264,7 @@ content:`
 <pre><code>&lt;h1 style="color:#228B22;"&gt;Tên bài thơ&lt;/h1&gt;</code></pre>
 <h4>Vận dụng 2: Ví dụ định dạng chữ theo hình minh họa.</h4>
 <p>Có thể dùng các phần tử <code>span</code> và dịch chuyển từng ký tự để tạo đường lượn sóng như hình:</p>
-<div style="display:flex;align-items:center;justify-content:space-between;overflow:hidden;height:90px;padding:0 4px;font-family:serif;font-size:30px;font-weight:bold;white-space:nowrap">
-<span style="transform:translateY(25px)">0</span><span style="transform:translateY(10px)">0</span><span style="transform:translateY(-8px)">0</span><span style="transform:translateY(-22px)">0</span><span style="transform:translateY(-28px)">0</span><span style="transform:translateY(-20px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(27px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(-22px)">0</span><span style="transform:translateY(-28px)">0</span><span style="transform:translateY(-20px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(27px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(-22px)">0</span><span style="transform:translateY(-28px)">0</span><span style="transform:translateY(-20px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(27px)">0</span><span style="transform:translateY(14px)">0</span><span style="transform:translateY(-5px)">0</span><span style="transform:translateY(-22px)">0</span><span style="transform:translateY(-28px)">0</span><span style="transform:translateY(-20px)">0</span>
-</div>
+<div class="wave" id="wave"></div>
 <ul>
 <li>Định dạng chữ đậm</li>
 <li>Định dạng chữ thường.</li>
@@ -330,8 +329,161 @@ content:`
             html += f'&lt;td style="border:2px solid black;"&gt;{value}&lt;/td&gt;'
         html += "&lt;/tr&gt;"
 
-    html += "&lt;/table&
-    renderMembers();
+    html += "&lt;/table&gt;"
+    return html
+
+data = [["Nguyễn Văn A", 8.5, 7.0, 9.0], ["Trần Thị B", 9.0, 8.0, 7.5]]
+with open("bang_diem.html", "w", encoding="utf-8") as f:
+    f.write(generate_html_table(data))</code></pre>
+`
+},
+{
+number:11,
+title:"Chèn ảnh và khung nội tuyến vào trang web",
+content:`
+<h3>LUYỆN TẬP</h3>
+<h4>Luyện tập 1: Ảnh gốc có kích thước 720 x 450 pixel, chèn vào trang web bằng câu lệnh sau. Hỏi ảnh trong trang web có kích thước bao nhiêu?</h4>
+<pre><code>&lt;img src="images/1.png" alt="chiếc lá" width="600"&gt;</code></pre>
+<p><b>Lời giải:</b> Kích thước ảnh trên trang web được xác định bởi thẻ <code>&lt;img&gt;</code> và thuộc tính <code>width</code>. Ở đây <code>width="600"</code> nghĩa là chiều rộng của ảnh là 600 pixel.</p>
+<p>Vì không chỉ định chiều cao, trình duyệt sẽ tự điều chỉnh chiều cao theo đúng tỉ lệ của ảnh gốc.</p>
+<ul>
+<li>Tỉ lệ chiều cao / chiều rộng của ảnh gốc: 450 / 720</li>
+<li>Chiều cao của ảnh trong trang web: 600 × 450 / 720 = 375 pixel</li>
+</ul>
+<p>Vậy ảnh trong trang web có kích thước <b>600 pixel (rộng) × 375 pixel (cao)</b>.</p>
+<h4>Luyện tập 2 (trang 66): Chèn thêm một số ảnh của mình vào trang web giới thiệu bản thân (đã tạo ở phần luyện tập, Bài 10).</h4>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+    &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là một trang web giới thiệu về bản thân tôi.&lt;/p&gt;
+    &lt;!-- Chèn ảnh của bạn --&gt;
+    &lt;h2&gt;Ảnh của tôi&lt;/h2&gt;
+    &lt;img src="path_to_your_image/image1.jpg" alt="Ảnh của bạn"&gt;
+    &lt;img src="path_to_your_image/image2.jpg" alt="Ảnh của bạn"&gt;
+    &lt;img src="path_to_your_image/image3.jpg" alt="Ảnh của bạn"&gt;
+    &lt;!-- Bạn cùng lớp --&gt;
+    &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend1" target="_blank"&gt;Facebook của Bạn 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend2" target="_blank"&gt;Facebook của Bạn 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend3" target="_blank"&gt;Facebook của Bạn 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Cảm ơn bạn đã ghé thăm!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3>VẬN DỤNG</h3>
+<h4>Vận dụng (trang 66): Tạo một khung nội tuyến và liên kết đến bài hát em yêu thích (ví dụ trên YouTube) vào trang web giới thiệu bản thân.</h4>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+    &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là một trang web giới thiệu về bản thân tôi.&lt;/p&gt;
+    &lt;!-- Khung nội tuyến chứa video yêu thích từ YouTube --&gt;
+    &lt;h2&gt;Bài hát yêu thích của tôi&lt;/h2&gt;
+    &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/video_id" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;!-- Bạn cùng lớp --&gt;
+    &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend1" target="_blank"&gt;Facebook của Bạn 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend2" target="_blank"&gt;Facebook của Bạn 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend3" target="_blank"&gt;Facebook của Bạn 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Cảm ơn bạn đã ghé thăm!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Thay <code>video_id</code> bằng mã video YouTube (phần sau <code>v=</code> trong đường link của video).</p>
+`
+}
+];
+
+const $ = id => document.getElementById(id);
+const home = $("home"), profilePage = $("profile-page");
+const initial = m => m.name.split(" ").pop().charAt(0);
+
+function renderMembers(){
+  $("member-list").innerHTML = members.map(m => `
+    <div class="member" data-id="${m.id}">
+      <div class="avatar">${initial(m)}<img src="${m.image}" alt="${m.name}" onerror="this.remove()"></div>
+      <h3>${m.name}</h3>
+      <span class="pill">Thành viên</span>
+      <span class="more">Xem thông tin →</span>
+    </div>`).join("");
+}
+
+function renderLessons(){
+  $("lesson-list").innerHTML = lessons.map(l => `
+    <button class="lesson-button" data-n="${l.number}">
+      <span class="lesson-number">Bài ${l.number}</span>
+      <span class="lesson-title">${l.title}</span>
+    </button>`).join("");
+}
+
+function showLesson(n){
+  const l = lessons.find(x => x.number === n);
+  if(!l) return;
+  document.querySelectorAll(".lesson-button").forEach(b =>
+    b.classList.toggle("active", Number(b.dataset.n) === n));
+  $("viewer-label").textContent = "Bài " + l.number;
+  $("viewer-title").textContent = l.title;
+  $("viewer-content").innerHTML = l.content;
+  const wave = $("wave");
+  if(wave){
+    let s = "";
+    for(let i = 0; i < 29; i++){
+      s += `<span style="transform:translateY(${Math.round(27 * Math.cos(i * Math.PI / 4 + 0.4))}px)">0</span>`;
+    }
+    wave.innerHTML = s;
+  }
+  $("viewer").classList.remove("hidden");
+}
+
+function showMember(id){
+  const m = members.find(x => x.id === id);
+  if(!m) return;
+  $("profile-content").innerHTML = `
+    <div class="avatar large">${initial(m)}<img src="${m.image}" alt="${m.name}" onerror="this.remove()"></div>
+    <h2>${m.name}</h2>
+    <div class="profile-info">
+      <p><b>Ngày sinh:</b> ${m.birthday}</p>
+      <p><b>Sở thích:</b> ${m.hobby}</p>
+    </div>`;
+  home.classList.add("hidden");
+  profilePage.classList.remove("hidden");
+  window.scrollTo(0, 0);
+}
+
+function openFromHash(){
+  const h = location.hash.slice(1);
+  if(h.startsWith("member-")){
+    showMember(h.slice(7));
+  } else {
+    profilePage.classList.add("hidden");
+    home.classList.remove("hidden");
+    if(h.startsWith("lesson-")) showLesson(Number(h.slice(7)));
+  }
+}
+
+$("member-list").addEventListener("click", e => {
+  const card = e.target.closest(".member");
+  if(card) location.hash = "member-" + card.dataset.id;
+});
+$("lesson-list").addEventListener("click", e => {
+  const btn = e.target.closest(".lesson-button");
+  if(btn) location.hash = "lesson-" + btn.dataset.n;
+});
+$("back-button").addEventListener("click", () => { location.hash = ""; });
+window.addEventListener("hashchange", openFromHash);
+
+renderMembers();
 renderLessons();
 openFromHash();
 </script>
